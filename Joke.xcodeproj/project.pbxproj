@@ -14,7 +14,7 @@
 		863D92872D8D680E009DB754 /* Exceptions for "Joke" folder in "Joke" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				App/Info.plist,
 			);
 			target = 863D92742D8D6808009DB754 /* Joke */;
 		};
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 365GCKKVC3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Joke/Info.plist;
+				INFOPLIST_FILE = Joke/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -175,7 +175,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 365GCKKVC3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Joke/Info.plist;
+				INFOPLIST_FILE = Joke/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
