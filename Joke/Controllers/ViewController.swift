@@ -15,20 +15,25 @@ class ViewController: UIViewController {
     @IBOutlet private var questionLabel: UILabel!
     
     //MARK: - Private Properties
-    
+    private var currentNumberIndex = 0
     
     //MARK: - Models
+    // вопросы и панчи
     private struct JokeQuestionAndPunchline {
         let text: String
         let punchline: String
     }
     
+    
+    // окно с панчем
     private struct JokePunchlineViewModel {
         let title: String
         let punch: String
         let textButton: String
     }
     
+    
+    // шаг
     private struct JokeStepViewModel {
         let question: String
         let jokeId: String
@@ -49,7 +54,15 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Private Methods
-    
+    private func convert(model: JokeQuestionAndPunchline) -> JokeStepViewModel {
+        let stepJoke = JokeStepViewModel(
+            question: model.text,
+            jokeId: "\(currentNumberIndex + 1)"
+        )
+        
+        
+        return stepJoke
+    }
     
     
     
