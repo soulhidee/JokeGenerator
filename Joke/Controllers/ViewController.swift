@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     //MARK: - Private Properties
     private var currentQuestionsIndex = 0
-    
+
     private let question: [JokeQuestionAndPunchline] = [
         JokeQuestionAndPunchline(text: "Why did the chicken get a penalty?", punchline: "For fowl play!"),
         JokeQuestionAndPunchline(text: "Why did the scarecrow become a motivational speaker?", punchline: "Because he was outstanding in his field!"),
@@ -53,6 +53,9 @@ class ViewController: UIViewController {
     //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        let currentQuestion = question[currentQuestionsIndex]
+        let viewModel = convert(model: currentQuestion)
+        show(joke: viewModel)
     }
     
     
@@ -66,10 +69,10 @@ class ViewController: UIViewController {
     
     //MARK: - Private Methods
     private func convert(model: JokeQuestionAndPunchline) -> QuestionStepViewModel {
-        let stepJoke = QuestionStepViewModel(
+        let questionStep = QuestionStepViewModel(
             question: model.text,
             jokeId: "\(currentQuestionsIndex + 1)")
-        return stepJoke
+        return questionStep
     }
     
     private func show(joke step: QuestionStepViewModel) {
@@ -77,6 +80,9 @@ class ViewController: UIViewController {
         numberLabel.text = step.jokeId
     }
     
+    private func showNextQuestion() {
+        
+    }
     
 }
 
