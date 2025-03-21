@@ -50,18 +50,15 @@ class ViewController: UIViewController {
         let jokeId: String
     }
 
-    //MARK: - Life Cycles
+    //MARK: - LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        let currentQuestion = question[currentQuestionsIndex]
-        let viewModel = convert(model: currentQuestion)
-        show(joke: viewModel)
+        displayCurrentQuestion()
     }
-    
-    
     
     //MARK: - Actions
     @IBAction func refreshButtonClicked(_ sender: UIButton) {
+        displayCurrentQuestion()
     }
     
     @IBAction func showButtonClicked(_ sender: UIButton) {
@@ -84,5 +81,11 @@ class ViewController: UIViewController {
         
     }
     
+    private func displayCurrentQuestion() {
+        currentQuestionsIndex = Int.random(in: 0..<question.count)
+        let currentQuestion = question[currentQuestionsIndex]
+        let viewModel = convert(model: currentQuestion)
+        show(joke: viewModel)
+    }
 }
 
