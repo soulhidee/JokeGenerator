@@ -9,16 +9,30 @@ import UIKit
 
 class ViewController: UIViewController {
     //MARK: - Outlets
-    @IBOutlet var showButton: UIButton!
-    @IBOutlet var refreshButton: UIButton!
-    @IBOutlet var numberLabel: UILabel!
-    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet private var showButton: UIButton!
+    @IBOutlet private var refreshButton: UIButton!
+    @IBOutlet private var numberLabel: UILabel!
+    @IBOutlet private var questionLabel: UILabel!
     
     //MARK: - Private Properties
     
     
     //MARK: - Models
+    private struct JokeQuestionAndPunchline {
+        let text: String
+        let punchline: String
+    }
     
+    private struct JokePunchlineViewModel {
+        let title: String
+        let punch: String
+        let textButton: String
+    }
+    
+    private struct JokeStepViewModel {
+        let question: String
+        let jokeId: String
+    }
 
     //MARK: - Life Cycles
     override func viewDidLoad() {
