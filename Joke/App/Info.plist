@@ -4,7 +4,7 @@
 <dict>
     <key>UIAppFonts</key>
         <array>
-             <string>Roboto-VariableFont_wdth,wght.ttf</string>
+             <string>Roboto-VariableFont.ttf</string>
         </array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
