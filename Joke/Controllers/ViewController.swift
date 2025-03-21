@@ -9,11 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     //MARK: - Outlets
-    
+    @IBOutlet var showButton: UIButton!
+    @IBOutlet var refreshButton: UIButton!
+    @IBOutlet var numberLabel: UILabel!
+    @IBOutlet var questionLabel: UILabel!
     
     //MARK: - Private Properties
     
     
+    //MARK: - Models
     
 
     //MARK: - Life Cycles
@@ -24,7 +28,11 @@ class ViewController: UIViewController {
     
     
     //MARK: - Actions
+    @IBAction func refreshButtonClicked(_ sender: UIButton) {
+    }
     
+    @IBAction func showButtonClicked(_ sender: UIButton) {
+    }
     
     //MARK: - Private Methods
     

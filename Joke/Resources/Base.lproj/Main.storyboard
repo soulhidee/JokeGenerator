@@ -22,49 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XIC-4e-QVw" userLabel="Buttons">
-                                <rect key="frame" x="32" y="690" width="329" height="64"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOY-lG-k5k" userLabel="Refresh Button">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                        <color key="backgroundColor" name="RWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="rcP-6w-VGA"/>
-                                            <constraint firstAttribute="width" constant="64" id="waG-CC-M23"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="icon">
-                                            <color key="titleColor" name="RBlack"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knG-fX-7pu" userLabel="Show Button">
-                                        <rect key="frame" x="80" y="0.0" width="249" height="64"/>
-                                        <color key="backgroundColor" name="RGreen"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Show punchline">
-                                            <color key="titleColor" name="RBlack"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="XI3-Cp-kNo">
                                 <rect key="frame" x="32" y="89" width="329" height="546"/>
                                 <subviews>
@@ -72,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="329" height="64"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Joke ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxh-Nz-APD" userLabel="JokeIdLabel">
-                                                <rect key="frame" x="24" y="0.0" width="71.333333333333343" height="64"/>
+                                                <rect key="frame" x="24" y="0.0" width="71.333333333333329" height="64"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                 <color key="textColor" name="RBlack"/>
                                                 <nil key="highlightedColor"/>
@@ -167,6 +124,55 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XIC-4e-QVw" userLabel="Buttons">
+                                <rect key="frame" x="32" y="690" width="329" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOY-lG-k5k" userLabel="Refresh Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <color key="backgroundColor" name="RWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="rcP-6w-VGA"/>
+                                            <constraint firstAttribute="width" constant="64" id="waG-CC-M23"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icon">
+                                            <color key="titleColor" name="RBlack"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="refreshButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHL-m1-EGE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knG-fX-7pu" userLabel="Show Button">
+                                        <rect key="frame" x="80" y="0.0" width="249" height="64"/>
+                                        <color key="backgroundColor" name="RGreen"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Show punchline">
+                                            <color key="titleColor" name="RBlack"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bk-XA-elc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="RBackground"/>
@@ -180,6 +186,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XI3-Cp-kNo" secondAttribute="bottom" constant="183" id="jAz-KV-U57"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="33X-qq-J0r" id="cBi-KU-tJI"/>
+                        <outlet property="questionLabel" destination="daP-2P-U93" id="0Ne-PY-Sl7"/>
+                        <outlet property="refreshButton" destination="wOY-lG-k5k" id="iOJ-Be-abc"/>
+                        <outlet property="showButton" destination="knG-fX-7pu" id="xvZ-qf-CuH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
