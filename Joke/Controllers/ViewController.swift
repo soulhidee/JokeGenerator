@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet private var questionLabel: UILabel!
     
     //MARK: - Private Properties
-    private var currentNumberIndex = 0
+    private var currentQuestionsIndex = 0
     
     private let question: [JokeQuestionAndPunchline] = [
         JokeQuestionAndPunchline(text: "Why did the chicken get a penalty?", punchline: "For fowl play!"),
@@ -44,8 +44,8 @@ class ViewController: UIViewController {
     }
     
     
-    // шаг
-    private struct JokeStepViewModel {
+    // вью модель для состояния "Вопрос показан"
+    private struct QuestionStepViewModel {
         let question: String
         let jokeId: String
     }
@@ -65,13 +65,17 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Private Methods
-    private func convert(model: JokeQuestionAndPunchline) -> JokeStepViewModel {
-        let stepJoke = JokeStepViewModel(
+    private func convert(model: JokeQuestionAndPunchline) -> QuestionStepViewModel {
+        let stepJoke = QuestionStepViewModel(
             question: model.text,
-            jokeId: "\(currentNumberIndex + 1)")
+            jokeId: "\(currentQuestionsIndex + 1)")
         return stepJoke
     }
     
+    private func show(joke step: QuestionStepViewModel) {
+        questionLabel.text = step.question
+        numberLabel.text = step.jokeId
+    }
     
     
 }
