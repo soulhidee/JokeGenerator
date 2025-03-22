@@ -1,4 +1,4 @@
-# Joke App
+# JokeGenerator App
 
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 ![Platform](https://img.shields.io/badge/Platform-iOS-blue.svg)
