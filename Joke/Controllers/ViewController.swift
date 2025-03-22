@@ -56,6 +56,11 @@ class ViewController: UIViewController {
         displayCurrentQuestion()
     }
     
+    override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            addBorders(to: questionLabel, color: .black, thickness: 2)
+        }
+    
     //MARK: - Actions
     @IBAction func refreshButtonClicked(_ sender: UIButton) {
         displayCurrentQuestion()
@@ -100,5 +105,25 @@ class ViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    func addBorders(to label: UILabel, color: UIColor, thickness: CGFloat) {
+            label.layer.sublayers?.removeAll(where: { $0.name == "borderLayer" })
+
+            let width = label.bounds.width
+
+            let topBorder = CALayer()
+            topBorder.name = "borderLayer"
+            topBorder.frame = CGRect(x: 0, y: 0, width: width, height: thickness)
+            topBorder.backgroundColor = color.cgColor
+            label.layer.addSublayer(topBorder)
+
+            let bottomBorder = CALayer()
+            bottomBorder.name = "borderLayer"
+            bottomBorder.frame = CGRect(x: 0, y: label.bounds.height - thickness, width: width, height: thickness)
+            bottomBorder.backgroundColor = color.cgColor
+            label.layer.addSublayer(bottomBorder)
+        }
+    
 }
 
