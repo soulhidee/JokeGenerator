@@ -62,6 +62,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showButtonClicked(_ sender: UIButton) {
+        let currentQuestion = question[currentQuestionsIndex]
+        let punchline = JokePunchlineViewModel(
+            title: "Punchline",
+            punch: currentQuestion.punchline,
+            textButton: "OK")
+        showArlet(with: punchline)
+        
     }
     
     //MARK: - Private Methods
@@ -77,15 +84,21 @@ class ViewController: UIViewController {
         numberLabel.text = step.jokeId
     }
     
-    private func showNextQuestion() {
-        
-    }
     
     private func displayCurrentQuestion() {
         currentQuestionsIndex = Int.random(in: 0..<question.count)
         let currentQuestion = question[currentQuestionsIndex]
         let viewModel = convert(model: currentQuestion)
         show(joke: viewModel)
+    }
+    
+    private func showArlet(with model: JokePunchlineViewModel) {
+        let alert = UIAlertController(title: model.title, message: model.punch, preferredStyle: .alert)
+        let action = UIAlertAction(title: model.textButton, style: .default) { _ in
+            self.displayCurrentQuestion()
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
