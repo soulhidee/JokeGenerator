@@ -28,27 +28,6 @@ class ViewController: UIViewController {
         JokeQuestionAndPunchline(text: "Why did the bicycle fall over?", punchline: "Because it was two-tired!"),
         JokeQuestionAndPunchline(text: "Why don’t programmers like nature?", punchline: "Too many bugs!")]
     
-    //MARK: - Models
-    // вопросы и панчи
-    private struct JokeQuestionAndPunchline {
-        let text: String
-        let punchline: String
-    }
-    
-    
-    // окно с панчем
-    private struct JokePunchlineViewModel {
-        let title: String
-        let punch: String
-        let textButton: String
-    }
-    
-    
-    // вью модель для состояния "Вопрос показан"
-    private struct QuestionStepViewModel {
-        let question: String
-        let jokeId: String
-    }
 
     //MARK: - LifeCycles
     override func viewDidLoad() {
