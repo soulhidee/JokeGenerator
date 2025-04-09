@@ -10,6 +10,7 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
     //MARK: - Private Properties
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: JokeQuestionAndPunchline?
+    private var alertPresenter: AlertPresenter?
     
     //MARK: - LifeCycles
     override func viewDidLoad() {
@@ -17,6 +18,7 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
         questionFactory = QuestionFactory()
         questionFactory?.setup(delegate: self)
         questionFactory?.requestNextQuestion()
+        alertPresenter = AlertPresenter(presentingController: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,8 +37,17 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
             title: "Punchline",
             punch: currentQuestion.punchline,
             textButton: "OK")
-        showAlert(with: punchline)
         
+        let alertModel = AlertModel(
+            title: punchline.title,
+            message: punchline.punch,
+            buttonText: punchline.textButton,
+            completion: { [weak self] in
+                self?.questionFactory?.requestNextQuestion()
+            }
+        )
+        
+        alertPresenter?.show(alert: alertModel)
     }
     
     //MARK: - Private Methods
@@ -59,15 +70,7 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
         show(joke: viewModel)
     }
     
-    private func showAlert(with model: JokePunchlineViewModel) {
-        let alert = UIAlertController(title: model.title, message: model.punch, preferredStyle: .alert)
-        let action = UIAlertAction(title: model.textButton, style: .default) { [weak self] _ in
-            guard let self = self else { return }
-            self.questionFactory?.requestNextQuestion()
-        }
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
+    
     
     
     func addBorders(to label: UILabel, color: UIColor, thickness: CGFloat) {
