@@ -99,7 +99,8 @@ class ViewController: UIViewController {
     
     private func showArlet(with model: JokePunchlineViewModel) {
         let alert = UIAlertController(title: model.title, message: model.punch, preferredStyle: .alert)
-        let action = UIAlertAction(title: model.textButton, style: .default) { _ in
+        let action = UIAlertAction(title: model.textButton, style: .default) { [weak self] _ in
+            guard let self = self else { return }
             self.displayCurrentQuestion()
         }
         alert.addAction(action)
