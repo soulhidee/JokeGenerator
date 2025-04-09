@@ -1,6 +1,6 @@
 # JokeGenerator App
 
-![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-orange.svg)
 ![Platform](https://img.shields.io/badge/Platform-iOS-blue.svg)
 
 Простое приложение для iOS, которое показывает случайные шутки с вопросами и ответами. Написано на Swift с использованием UIKit.
