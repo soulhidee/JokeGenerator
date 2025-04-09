@@ -1,18 +1,18 @@
 import UIKit
 
 final class ViewController: UIViewController, QuestionFactoryDelegate {
+    //MARK: - Private Properties
+    private var questionFactory: QuestionFactoryProtocol?
+    private var currentQuestion: JokeQuestionAndPunchline?
+    private var alertPresenter: AlertPresenter?
+    
     //MARK: - Outlets
     @IBOutlet private var showButton: UIButton!
     @IBOutlet private var refreshButton: UIButton!
     @IBOutlet private var numberLabel: UILabel!
     @IBOutlet private var questionLabel: UILabel!
     
-    //MARK: - Private Properties
-    private var questionFactory: QuestionFactoryProtocol?
-    private var currentQuestion: JokeQuestionAndPunchline?
-    private var alertPresenter: AlertPresenter?
-    
-    //MARK: - LifeCycles
+    //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         questionFactory = QuestionFactory()
@@ -63,16 +63,13 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
         numberLabel.text = step.jokeId
     }
     
-    
     private func displayCurrentQuestion() {
         guard let currentQuestion else { return }
         let viewModel = convert(model: currentQuestion)
         show(joke: viewModel)
     }
     
-    
-    
-    
+    //MARK: - UI Setup
     func addBorders(to label: UILabel, color: UIColor, thickness: CGFloat) {
         label.layer.sublayers?.removeAll(where: { $0.name == "borderLayer" })
         
@@ -91,12 +88,10 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
         label.layer.addSublayer(bottomBorder)
     }
     
+    //MARK: - Delegate Methods
     func didReceiveNextQuestion(question: JokeQuestionAndPunchline?) {
         guard let question else { return }
         currentQuestion = question
         displayCurrentQuestion()
-        
     }
-    
 }
-
