@@ -25,7 +25,7 @@ final class QuestionFactory: QuestionFactoryProtocol {
         
         let question = shuffledQuestions[currentIndex]
         currentIndex += 1
-        delegate?.didReceiveNextQuestion(questions: question)
+        delegate?.didReceiveNextQuestion(question: question)
     }
     
     func setup(delegate: QuestionFactoryDelegate) {

@@ -8,7 +8,6 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
     @IBOutlet private var questionLabel: UILabel!
     
     //MARK: - Private Properties
-    private var currentQuestionsIndex = 0
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: JokeQuestionAndPunchline?
     
@@ -89,9 +88,9 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
         label.layer.addSublayer(bottomBorder)
     }
     
-    func didReceiveNextQuestion(questions: JokeQuestionAndPunchline?) {
-        guard let questions else { return }
-        currentQuestion = questions
+    func didReceiveNextQuestion(question: JokeQuestionAndPunchline?) {
+        guard let question else { return }
+        currentQuestion = question
         displayCurrentQuestion()
         
     }
