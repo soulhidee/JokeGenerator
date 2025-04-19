@@ -7,6 +7,7 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
     private var alertPresenter: AlertPresenter?
     
     //MARK: - Outlets
+    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private var showButton: UIButton!
     @IBOutlet private var refreshButton: UIButton!
     @IBOutlet private var numberLabel: UILabel!
@@ -67,6 +68,16 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
         guard let currentQuestion else { return }
         let viewModel = convert(model: currentQuestion)
         show(joke: viewModel)
+    }
+    
+    private func activityIndicatorOn() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    private func activityIndicatorOff() {
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating
     }
     
     func didLoadDataFromServer() {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="XI3-Cp-kNo">
-                                <rect key="frame" x="32" y="89" width="329" height="546"/>
+                                <rect key="frame" x="32" y="148" width="329" height="453"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" spacing="182" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-IY-UQY" userLabel="JokeID">
                                         <rect key="frame" x="0.0" y="0.0" width="329" height="64"/>
@@ -86,7 +86,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="NLI-Td-Raw" userLabel="Label Question">
-                                        <rect key="frame" x="0.0" y="176" width="329" height="370"/>
+                                        <rect key="frame" x="0.0" y="176" width="329" height="277"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fur-GB-YBS" userLabel="Setup">
                                                 <rect key="frame" x="24" y="24" width="42" height="19"/>
@@ -95,10 +95,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eQt-zt-Tso">
-                                                <rect key="frame" x="24" y="61" width="281" height="285"/>
+                                                <rect key="frame" x="24" y="61" width="281" height="192"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why did the chicken get a penalty?" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daP-2P-U93" userLabel="Joke">
-                                                        <rect key="frame" x="0.0" y="0.0" width="281" height="285"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="281" height="192"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                                         <color key="textColor" name="RBlack"/>
                                                         <nil key="highlightedColor"/>
@@ -125,7 +125,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XIC-4e-QVw" userLabel="Buttons">
-                                <rect key="frame" x="32" y="690" width="329" height="64"/>
+                                <rect key="frame" x="32" y="656" width="329" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOY-lG-k5k" userLabel="Refresh Button">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -173,6 +173,10 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-wV-Pbi">
+                                <rect key="frame" x="186.66666666666666" y="452.66666666666669" width="20" height="20"/>
+                                <color key="color" red="0.13333333333333333" green="0.54509803921568623" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="RBackground"/>
@@ -180,13 +184,16 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XIC-4e-QVw" secondAttribute="trailing" constant="32" id="2OQ-HJ-MZI"/>
                             <constraint firstItem="XI3-Cp-kNo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="BIb-Sv-XGI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XIC-4e-QVw" secondAttribute="bottom" constant="64" id="CMu-5o-YaW"/>
+                            <constraint firstItem="jDR-wV-Pbi" firstAttribute="centerX" secondItem="NLI-Td-Raw" secondAttribute="centerX" id="SLN-hg-62f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XI3-Cp-kNo" secondAttribute="trailing" constant="32" id="UTp-5G-Pk4"/>
                             <constraint firstItem="XI3-Cp-kNo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="W3L-4N-wk8"/>
                             <constraint firstItem="XIC-4e-QVw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="cwK-WK-0rC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XI3-Cp-kNo" secondAttribute="bottom" constant="183" id="jAz-KV-U57"/>
+                            <constraint firstItem="jDR-wV-Pbi" firstAttribute="centerY" secondItem="NLI-Td-Raw" secondAttribute="centerY" id="qQ4-Zt-7sK"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="jDR-wV-Pbi" id="O7M-qC-DBL"/>
                         <outlet property="numberLabel" destination="33X-qq-J0r" id="cBi-KU-tJI"/>
                         <outlet property="questionLabel" destination="daP-2P-U93" id="0Ne-PY-Sl7"/>
                         <outlet property="refreshButton" destination="wOY-lG-k5k" id="iOJ-Be-abc"/>
