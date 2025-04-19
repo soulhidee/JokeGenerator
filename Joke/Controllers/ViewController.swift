@@ -16,6 +16,7 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
     //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicatorOn()
         questionFactory = QuestionFactory()
         questionFactory?.setup(delegate: self)
         questionFactory?.requestNextQuestion()
@@ -77,15 +78,27 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
     
     private func activityIndicatorOff() {
         activityIndicator.isHidden = true
-        activityIndicator.stopAnimating
+        activityIndicator.stopAnimating()
+    }
+    
+    private func showNetworkError(message: String) {
+        activityIndicatorOff()
+        let model = AlertModel(title: "Ошибка",
+                               message: message,
+                               buttonText: "Попробывать еще раз") { [weak self] in
+            guard let self else { return }
+            self.questionFactory?.requestNextQuestion()
+        }
+        alertPresenter?.show(alert: model)
     }
     
     func didLoadDataFromServer() {
-        
+        activityIndicatorOff()
+        questionFactory?.requestNextQuestion()
     }
     
     func didFailToLoadData(with error: Error) {
-        
+        showNetworkError(message: error.localizedDescription)
     }
     
     //MARK: - UI Setup
