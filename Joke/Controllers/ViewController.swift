@@ -69,6 +69,14 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
         show(joke: viewModel)
     }
     
+    func didLoadDataFromServer() {
+        
+    }
+    
+    func didFailToLoadData(with error: Error) {
+        
+    }
+    
     //MARK: - UI Setup
     func addBorders(to label: UILabel, color: UIColor, thickness: CGFloat) {
         label.layer.sublayers?.removeAll(where: { $0.name == "borderLayer" })
