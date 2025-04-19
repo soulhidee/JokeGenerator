@@ -124,6 +124,7 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
     //MARK: - Delegate Methods
     func didReceiveNextQuestion(question: JokeQuestionAndPunchline?) {
         guard let question else { return }
+        activityIndicatorOff()
         currentQuestion = question
         displayCurrentQuestion()
     }

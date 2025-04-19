@@ -97,7 +97,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eQt-zt-Tso">
                                                 <rect key="frame" x="24" y="61" width="281" height="192"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why did the chicken get a penalty?" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daP-2P-U93" userLabel="Joke">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daP-2P-U93" userLabel="Joke">
                                                         <rect key="frame" x="0.0" y="0.0" width="281" height="192"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                                         <color key="textColor" name="RBlack"/>
