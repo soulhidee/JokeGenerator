@@ -17,10 +17,11 @@ final class ViewController: UIViewController, QuestionFactoryDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicatorOn()
-        questionFactory = QuestionFactory()
-        questionFactory?.setup(delegate: self)
-        questionFactory?.requestNextQuestion()
+        let loader = JokeLoader()
+        let factory = QuestionFactory(randomJokeLoader: loader, delegate: self)
+        self.questionFactory = factory
         alertPresenter = AlertPresenter(presentingController: self)
+        questionFactory?.requestNextQuestion()
     }
     
     override func viewDidLayoutSubviews() {
